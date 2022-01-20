@@ -1,14 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Role } from '@virtual-me/virtual-me-ts-core';
 import { Document } from 'mongoose';
 import * as bcrypt from 'bcrypt';
+import { Role } from 'src/common/enum/roles.enum';
 
 export type UserDocument = User & Document;
 
 @Schema()
 export class User {
-  @Prop({ type: String, required: true })
-  name: string;
+  @Prop({ type: String, required: true, unique: true })
+  username: string;
 
   @Prop({ type: String, required: true })
   email: string;

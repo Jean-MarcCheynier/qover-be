@@ -10,11 +10,10 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
 import { ApiTags } from '@nestjs/swagger';
-import { Public } from 'src/common/decorator/public.decorator';
-import { Role } from '@virtual-me/virtual-me-ts-core';
-import { Roles } from 'src/common/decorator/roles.decorator';
+import { Roles } from '../common/decorator/roles.decorator';
+import { Role } from 'src/common/enum/roles.enum';
+import { User } from './schema/user.schema';
 
 @ApiTags('User')
 @Controller('user')
@@ -27,9 +26,9 @@ export class UserController {
   }
 
   //@Public()
-  @Roles(Role.USER)
+  @Roles(Role.ADMIN)
   @Get()
-  findAll(): Promise<User[]> {
+  findAll() {
     return this.userService.findAll();
   }
 
@@ -41,6 +40,12 @@ export class UserController {
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(id, updateUserDto);
+  }
+
+  @Roles(Role.ADMIN)
+  @Delete()
+  removeAll() {
+    return this.userService.removeAll();
   }
 
   @Roles(Role.ADMIN)
