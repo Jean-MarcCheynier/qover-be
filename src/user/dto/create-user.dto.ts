@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Role } from '@virtual-me/virtual-me-ts-core';
+import { Role } from 'src/common/enum/roles.enum';
 
 export class CreateUserDto {
   @ApiProperty({
@@ -13,8 +13,6 @@ export class CreateUserDto {
     enum: [Role.ADMIN, Role.GUEST, Role.USER],
   })
   role: Role;
-  @ApiProperty()
-  login: string;
   @ApiProperty()
   password: string;
 }

@@ -19,6 +19,8 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { RolesGuard } from './auth/guard/roles.guard';
 import { JwtAuthGuard } from 'src/auth/guard/jwt-auth.guard';
 import { SapcaiModule } from './sapcai/sapcai.module';
+import { CarModule } from './car/car.module';
+import { SeederModule } from './seeder/seeder.module';
 import configuration from './config/configuration';
 
 @Module({
@@ -40,6 +42,8 @@ import configuration from './config/configuration';
     AuthModule,
     WsModule,
     SapcaiModule,
+    CarModule,
+    SeederModule,
   ],
   controllers: [AppController],
   providers: [
