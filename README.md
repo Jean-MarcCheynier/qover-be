@@ -32,13 +32,20 @@
 $ npm install
 ```
 ## Set env variables
-  /.development.shared.env contains the env variables. Set them before running the app.  
-  These variables are not public and are not shared in the git repository.
+  /.development.shared.env lists the required env variables. Before running the app create the env file .development.env  
 
   ```bash
   $ cp ./.development.shared.env ./.development.env
   ```
-  ( You can setup you own mongodb or use the one provided in the email)
+  
+  Then edit it to set the proper env variables :
+  
+  ````
+  PORT=5000
+  MONGO_URI=mymongodb-connection-url@dbname
+  ````
+  
+  (You can setup you own mongodb or use the one provided in the email)
 
 ## Seed
 
