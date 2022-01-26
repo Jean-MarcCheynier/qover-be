@@ -31,6 +31,21 @@
 ```bash
 $ npm install
 ```
+## Set env variables
+  /.development.shared.env contains the env variables. Set them before running the app.  
+  These variables are not public and are not shared in the git repository.
+
+  ```bash
+  $ cp ./.development.shared.env ./.development.env
+  ```
+  ( You can setup you own mongodb or use the one provided in the email)
+
+## Seed
+
+```bash
+# seed DB
+$ npm run seed
+```
 
 ## Running the app
 

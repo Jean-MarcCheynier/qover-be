@@ -4,8 +4,10 @@ import { CoverType } from 'src/common/enum/cover.enum';
 
 @Schema()
 class PremiumDetails {
+  @Prop({ type: Number, required: true, default: 18 })
+  minAge: number;
   @Prop({ type: Number, required: true })
-  basedPrice: number;
+  basePrice: number;
   @Prop({ type: Number, required: true })
   carPriceMultiplier: number;
 }

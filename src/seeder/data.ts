@@ -8,12 +8,14 @@ export const cars: CreateCarDto[] = [
     brand: 'AUDI',
     coverOptions: {
       [CoverType.GLOBAL]: {
-        basedPrice: 250,
+        basePrice: 250,
         carPriceMultiplier: 0,
+        minAge: 18,
       },
       [CoverType.UNIVERSAL]: {
-        basedPrice: 250,
+        basePrice: 250,
         carPriceMultiplier: 0.03,
+        minAge: 18,
       },
     },
   },
@@ -21,12 +23,14 @@ export const cars: CreateCarDto[] = [
     brand: 'BMW',
     coverOptions: {
       [CoverType.GLOBAL]: {
-        basedPrice: 150,
+        basePrice: 150,
         carPriceMultiplier: 0,
+        minAge: 18,
       },
       [CoverType.UNIVERSAL]: {
-        basedPrice: 150,
+        basePrice: 150,
         carPriceMultiplier: 0.04,
+        minAge: 18,
       },
     },
   },
@@ -34,12 +38,14 @@ export const cars: CreateCarDto[] = [
     brand: 'PORSHE',
     coverOptions: {
       [CoverType.GLOBAL]: {
-        basedPrice: 500,
+        basePrice: 500,
         carPriceMultiplier: 0,
+        minAge: 25,
       },
       [CoverType.UNIVERSAL]: {
-        basedPrice: 500,
+        basePrice: 500,
         carPriceMultiplier: 0.07,
+        minAge: 25,
       },
     },
   },
